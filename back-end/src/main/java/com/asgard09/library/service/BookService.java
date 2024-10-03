@@ -136,7 +136,6 @@ public class BookService {
                 book.get().getDescription(),
                 book.get().getImg()
         );
-
         historyRepository.save(history);
     }
 

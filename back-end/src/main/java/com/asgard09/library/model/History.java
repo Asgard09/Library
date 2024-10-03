@@ -2,12 +2,15 @@ package com.asgard09.library.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
-
+import lombok.Getter;
+import lombok.Setter;
 
 
 @Entity
 @Table(name = "History")
 @Data
+@Getter
+@Setter
 public class History {
 
     public History(){}
