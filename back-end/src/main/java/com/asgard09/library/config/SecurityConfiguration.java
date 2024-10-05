@@ -31,7 +31,7 @@ public class SecurityConfiguration {
                                 .authenticated()
                                 .anyRequest().permitAll()
                 )
-                .oauth2ResourceServer(oauth2 -> oauth2.jwt(Customizer.withDefaults()));
+                .oauth2ResourceServer(oauth2 -> oauth2.jwt(Customizer.withDefaults()));  // OAuth2 Resource Server
 
         // Enable CORS with proper configuration
         http.cors(cors -> cors.configurationSource(corsConfigurationSource()));
@@ -59,3 +59,4 @@ public class SecurityConfiguration {
         return source;
     }
 }
+
