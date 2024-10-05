@@ -2,6 +2,7 @@ package com.asgard09.library.config;
 
 import com.asgard09.library.model.Book;
 
+import com.asgard09.library.model.Message;
 import com.asgard09.library.model.Review;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
@@ -27,11 +28,11 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
         //--> Use to display Id column in the entity
         config.exposeIdsFor(Book.class);
         config.exposeIdsFor(Review.class);
-//        config.exposeIdsFor(Message.class);
+        config.exposeIdsFor(Message.class);
 
         disableHttpMethods(Book.class, config, theUnsupportedActions);
         disableHttpMethods(Review.class, config, theUnsupportedActions);
-//        disableHttpMethods(Message.class, config, theUnsupportedActions);
+        disableHttpMethods(Message.class, config, theUnsupportedActions);
 
         /* Configure CORS Mapping */
         cors.addMapping(config.getBasePath() + "/**")
