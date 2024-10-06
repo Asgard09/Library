@@ -33,6 +33,7 @@ public class Message {
 
     @Column(name="closed")
     private boolean closed;
+    //Status of message between admin and user
 
     public Message(String title, String question) {
         this.title = title;
