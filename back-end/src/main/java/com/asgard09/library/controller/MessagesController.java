@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/messages")
 public class MessagesController {
 
-    private MessageService messageService;
+    private final MessageService messageService;
 
     @Autowired
     public MessagesController(MessageService messageService) {
