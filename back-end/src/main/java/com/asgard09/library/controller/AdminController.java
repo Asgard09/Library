@@ -19,10 +19,10 @@ public class AdminController {
     }
 
     @PutMapping("/secure/increase/book/quantity")
-    public void increaseBookQuantity(@RequestHeader(value = "Authorization") String token,
-                                     @RequestParam Long bookId) throws Exception{
+    public void increaseBookQuantity(@RequestHeader(value="Authorization") String token,
+                                     @RequestParam Long bookId) throws Exception {
         String admin = ExtractJWT.payloadJWTExtraction(token, "\"userType\"");
-        if (admin == null || !admin.equals("admin")){
+        if (admin == null || !admin.equals("admin")) {
             throw new Exception("Administration page only");
         }
         adminService.increaseBookQuantity(bookId);
